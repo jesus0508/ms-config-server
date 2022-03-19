@@ -1,15 +1,7 @@
 server:
-  port: 8080
-
+  port: 9090
 spring:
-  cloud:
-    config:
-      server:
-        git:
-          uri: ${REPO_CONFIG_FILES}
-          username: ${GIT_USER:user}
-          password: ${GIT_PWD:s3cr3t}
-          search-paths: /ms-credits
-          default-label: "develop"
-  security:    user:      name: ${CLIENT_USER:user}
-      password: ${CLIENT_PWD:s3cr3t}
+  application:
+    name: ms-config-server
+  profiles:
+    active: dev
