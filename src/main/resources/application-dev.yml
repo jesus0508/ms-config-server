@@ -1,15 +1,14 @@
 server:
-  port: 9090
+  port: ${SERVER_PORT:8081}
 spring:
   cloud:
     config:
       server:
         git:
           uri: ${REPO_CONFIG_FILES:https://github.com/jesus0508/configuration-files.git}
-          #username: ${GIT_USER:user}
-          #password: ${GIT_PWD:s3cr3t}
           search-paths: /{application}
-          default-label: "develop"
+          default-label: develop
+
   security:
     user:
       name: ${CLIENT_USER:user}
